@@ -25,6 +25,8 @@ class TopicObserver
     	$topic->excerpt = make_excerpt($topic->body);
     }
 
+ 
+
 
 
 

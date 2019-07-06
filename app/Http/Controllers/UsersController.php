@@ -28,7 +28,7 @@ class UsersController extends Controller
         $data = $request->all();
 
         if ($request->avatar) {
-            $refault = $uploads->save($request->avatar , 'avatars' , Auth::id());
+            $refault = $uploads->save($request->avatar , 'avatars' , Auth::id(), 416);
             if ($refault) {
                 $data['avatar'] = $refault['path'];
             }

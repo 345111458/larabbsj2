@@ -18,6 +18,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        //如果用户能够成功设置为已认证的话，触发事件 Verified 并将用户传参。这里使用了 Laravel 的事件系统。
+        \Illuminate\Auth\Events\Verified::class => [
+            \App\Listeners\EmailVerified::class,
+        ],
+        
     ];
 
     /**
@@ -28,6 +34,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+
 
         //
     }

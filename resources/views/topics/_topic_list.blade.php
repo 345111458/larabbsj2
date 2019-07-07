@@ -11,10 +11,10 @@
         <div class="media-body">
 
           <div class="media-heading mt-0 mb-1">
-            <a href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">
+            <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
               {{ $topic->title }}
             </a>
-            <a class="float-right" href="{{ route('topics.show', [$topic->id]) }}">
+            <a class="float-right" href="{{ $topic->link() }}">
               <span class="badge badge-secondary badge-pill"> {{ $topic->reply_count }} </span>
             </a>
           </div>
@@ -27,7 +27,7 @@
             </a>
 
             <span> • </span>
-            <a class="text-secondary" href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}">
+            <a class="text-secondary" href="{{ $topic->link() }}" title="{{ $topic->user->name }}">
               <i class="far fa-user"></i>
               {{ $topic->user->name }}
             </a>
